@@ -1,0 +1,18 @@
+version: '2'
+ 
+services:
+    frontend:
+        build: .
+        labels: 
+            - "maintainer=michihiroyamamoto123@gmail.com"
+        volumes:
+            -  .:/app
+        ports:
+            - '3000:3000'
+        depends_on: 
+            - backend
+    
+    backend:
+        build: ./backend
+        ports:
+            - '5000:5000'
