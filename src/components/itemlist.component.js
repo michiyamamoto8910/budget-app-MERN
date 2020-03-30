@@ -121,7 +121,8 @@ export default class ItemList extends Component {
             // otherwise, data will come from items array that is already filtered by month
             items: [],
             month: 'All',
-            unfilteredItems: []
+            unfilteredItems: [],
+            category: 'INCOME'
         };
     }
 
@@ -138,7 +139,11 @@ export default class ItemList extends Component {
             .catch(error => {
                 console.log('Error: ' + error);
             })
-
+            //for adding income to categories when the user first uses the app
+            const category = {
+                category: this.state.category
+            }
+            axios.post('http://localhost:5000/categories/add',category)
 
     }
 

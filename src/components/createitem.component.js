@@ -22,7 +22,7 @@ export default class CreateItem extends Component {
             description: '',
             price: '',
             date: new Date(),
-            categories: []
+            categories: [],
         }
     }
 
@@ -33,8 +33,8 @@ export default class CreateItem extends Component {
                 this.setState({
                     // insert the data that is received from the axios get request
                     // to categories array, so the user can choose from the
-                    // the existing categories
-                    categories: response.data.map(category => category.category), 
+                    // the existing categories.
+                    categories: response.data.map(category => category.category),
                     // make the first index in the array the default value for category,
                     // the user may tend to not click the selected in the option making the value to null
                     category: response.data[0].category
